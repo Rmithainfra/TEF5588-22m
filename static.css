@@ -1,0 +1,102 @@
+#panorama {
+    width: 100%;
+    height: 97vh;
+    position: relative;
+}
+#degreeScale {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    z-index: 2;
+    font-weight: bold;
+}
+#degreeScale::before {
+    content: '';
+    position: absolute;
+    top: -15px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 15px; 
+    background-color: rgb(0, 0, 0);
+    z-index: 1;
+}
+#controls {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 3px;
+}
+.ctrl {
+    padding: 8px 5px;
+    width: 30px;
+    text-align: center;
+    background: rgba(8, 189, 240, 0.8);
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+}
+.ctrl:hover::after {
+    content: attr(text);
+    position: absolute;
+    top: -30px; 
+    left:50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    white-space: nowrap;
+}
+.popup-container {
+    position: absolute;
+    top:-160%;
+    left: 50%;
+    transform: translate(-20%, -50%);
+    padding: 10px;
+    display: none;
+    z-index: 9999;
+}
+.popup-window {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+    position: relative;
+    border: 6px solid rgba(255, 255, 255, 0.8);
+}
+.popup-window img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+}
+.popup-container.left {
+    left: calc(50% - 100px);
+}
+.popup-container.right {
+    left: calc(50% + 20px);
+}
+.popup-window-text {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 16px;
+    z-index: 1;
+    visibility: hidden;
+    font-weight: bold;
+}
+.popup-window:hover .popup-window-text {
+    visibility: visible;
+}
+.popup-window:hover {
+    border-color:rgba(8, 189, 240, 0.8);
+}
